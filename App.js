@@ -1,36 +1,21 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import React from 'react'
+import AppContainer from './navigation'
+import firebase from 'firebase/app';
 
-import useCachedResources from './hooks/useCachedResources';
-import BottomTabNavigator from './navigation/BottomTabNavigator';
-import LinkingConfiguration from './navigation/LinkingConfiguration';
+// Initialize firebase so we can authenticate and store data in the database
+let config = {
+  apiKey: 'AIzaSyDfladnfGYRlvgdOOY8IMjGWz7baLCSLdg',
+    authDomain: 'blipr-83200.firebaseapp.com',
+    databaseURL: 'https://blipr-83200.firebaseio.com',
+    projectId: 'blipr-83200',
+    storageBucket: 'blipr-83200.appspot.com',
+    messagingSenderId: '385818329654',
+    appId: '1:385818329654:web:96dc9260f8e628beba4e97',
+    measurementId: 'G-94V7KCKRWP'
+};
+firebase.initializeApp(config);
 
-const Stack = createStackNavigator();
-
-export default function App(props) {
-  const isLoadingComplete = useCachedResources();
-
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
-        <NavigationContainer linking={LinkingConfiguration}>
-          <Stack.Navigator>
-            <Stack.Screen name="Root" component={BottomTabNavigator} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </View>
-    );
-  }
+export default function App() {
+  // Startup the Navigation from /navigation/index.js which routes to the login page on startup
+  return <AppContainer/> 
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
