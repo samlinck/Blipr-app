@@ -8,7 +8,7 @@ import TextCustom from '../components/TextCustom';
 import TextInputCustom from '../components/TextInputCustom';
 
 
-export default class SignupScreen extends React.Component {
+export default class RegisterScreen extends React.Component {
 
   constructor(props){
     super(props)
