@@ -2,17 +2,17 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import TextCustom from '../components/TextCustom';
 
-export default class TutorialScreen4 extends React.Component {
+export default class TutorialScreen5 extends React.Component {
 
-  goToTutorial5 = () => this.props.navigation.navigate('Tutorial5');
+  goToTutorial6 = () => this.props.navigation.navigate('Tutorial6');
 
   render() {
     return (
       <View style={styles.container}>
-        <TextCustom>Tutorial 4</TextCustom>
+        <TextCustom>Tutorial 5</TextCustom>
 
         <TouchableOpacity
-          onPress={this.goToTutorial5}>
+          onPress={this.goToTutorial6}>
             <TextCustom>Next</TextCustom>
         </TouchableOpacity> 
       </View>
