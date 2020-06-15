@@ -7,8 +7,8 @@ export default {
       path: 'app',
       screens: {
         Home: 'home',
-        Links: 'links',
-        List: 'list',
+        Alert: 'alert',
+        Scan: 'scan',
       },
     },
   },

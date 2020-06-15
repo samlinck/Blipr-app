@@ -11,16 +11,14 @@ export default class LoadingScreen extends React.Component {
     componentDidMount() {
         firebase.auth().onAuthStateChanged(user => {
             // Shorthand if/else for on 'user' which then navigates to either LoginScreen or starts up the App (HomeScreen) navigation
-            setTimeout( () => {
-                return this.props.navigation.navigate(user ? 'App' : 'Tutorial1')
-            }, 4 * 1000)
+            return this.props.navigation.navigate(user ? 'App' : 'Login')
         });
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <TextCustom>LOGO</TextCustom>
+                <TextCustom>LOGO</TextCustom>   
                 <ActivityIndicator size="large"/>
             </View>
         )

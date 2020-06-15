@@ -3,8 +3,11 @@ import * as React from 'react';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import ListScreen from '../screens/ListScreen';
+import AlertScreen from '../screens/AlertScreen';
+import ScanScreen from '../screens/ScanScreen';
+import BlipScreen from '../screens/BlipScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -21,24 +24,48 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Get Started',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon  focused={focused} name="md-home" />,
+          tabBarLabel: () =>  <TabBarIcon tabBarOptions={{ showLabel: false }} />
         }}
       />
+
       <BottomTab.Screen
-        name="Links"
-        component={LinksScreen}
+        name="Alert"
+        component={AlertScreen}
         options={{
-          title: 'Resources',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+          showLabel: false,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-alert" />,
+          tabBarLabel: () =>  <TabBarIcon tabBarOptions={{ showLabel: false }} />
         }}
       />
+
       <BottomTab.Screen
-        name="List"
-        component={ListScreen}
+        name="Scan"
+        component={ScanScreen}
         options={{
-          title: 'Test',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-build" />,
+          showLabel: false,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-camera" />,
+          tabBarLabel: () =>  <TabBarIcon tabBarOptions={{ showLabel: false }} />
+        }}
+      />
+
+      <BottomTab.Screen
+        name="Blip"
+        component={BlipScreen}
+        options={{
+          showLabel: false,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-save" />,
+          tabBarLabel: () =>  <TabBarIcon tabBarOptions={{ showLabel: false }} />
+        }}
+      />
+
+      <BottomTab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          showLabel: false,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-people" />,
+          tabBarLabel: () =>  <TabBarIcon tabBarOptions={{ showLabel: false }} />
         }}
       />
     </BottomTab.Navigator>
@@ -50,10 +77,14 @@ function getHeaderTitle(route) {
 
   switch (routeName) {
     case 'Home':
-      return 'How to get started';
-    case 'Links':
-      return 'Links to learn more';
-    case 'List':
-      return 'Tutorial';
+      return 'Home';
+    case 'Alert':
+      return 'Your Alerts';
+    case 'Scan':
+      return 'Scan your QR code';
+    case 'Blip':
+      return 'Your Blips';
+    case 'Profile':
+      return 'Your Profile';
   }
 }

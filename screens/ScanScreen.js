@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 
-export default function ListScreen() {
+export default function ScanScreen() {
 
     const friends = [
         { name: 'Friend 1' },

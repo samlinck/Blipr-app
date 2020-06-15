@@ -7,6 +7,9 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 
+import LoginScreen from '../screens/LoginScreen';
+
+
 export default class HomeScreen extends React.Component {
 
   constructor(props){
@@ -43,13 +46,13 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
 
-        <TextCustom >Blipr</TextCustom>
+        <TextCustom >Blipr 🔴</TextCustom>
 
         <TextCustom >Welcome, {this.state.name}!</TextCustom>
 
         <TouchableOpacity
           onPress={this.handleLogout}>
-            <TextCustom>Logout</TextCustom>
+            <TextCustom >Logout</TextCustom>
         </TouchableOpacity>
       
       </View>
