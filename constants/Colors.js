@@ -1,6 +1,8 @@
+import { Colors } from "react-native/Libraries/NewAppScreen";
+
 const tintColor = '#2f95dc';
 
-export default {
+const colors = {
   tintColor,
   tabIconDefault: '#ccc',
   tabIconSelected: tintColor,
@@ -11,4 +13,7 @@ export default {
   warningText: '#666804',
   noticeBackground: tintColor,
   noticeText: '#fff',
+  red: '#F72806',
 };
+
+export default colors;

@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, TextInput, ActivityIndicator, TouchableOpacity 
 import firebase from 'firebase/app';
 import TextCustom from '../components/TextCustom';
 import TextInputCustom from '../components/TextInputCustom';
+import universalstyles from '../assets/style/Style';
 
 export default class LoginScreen extends React.Component {
 
@@ -46,11 +47,9 @@ export default class LoginScreen extends React.Component {
 
   render() {
       return (
-        <View >
-
-          <TextCustom >Blipr</TextCustom>
+        <View style={universalstyles.container}>
           
-          <TextCustom >Login</TextCustom>
+          <TextCustom style={universalstyles.title} >Login</TextCustom>
           
           {this.state.errorMessage &&
             <Text>
@@ -100,4 +99,5 @@ export default class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
  // Here styling
+
 })
