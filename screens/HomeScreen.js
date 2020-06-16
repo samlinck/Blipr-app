@@ -7,9 +7,6 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 
-import LoginScreen from '../screens/LoginScreen';
-
-
 export default class HomeScreen extends React.Component {
 
   constructor(props){
@@ -23,7 +20,6 @@ export default class HomeScreen extends React.Component {
   componentDidMount() {
     // Get name via Firestore.
     this.getName();
-
   }
   
   getName = () => {
