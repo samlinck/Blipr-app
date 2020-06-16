@@ -4,7 +4,7 @@ import TextCustom from '../components/TextCustom';
 
 export default class TutorialScreen6 extends React.Component {
 
-  goToApp= () => this.props.navigation.navigate('App');
+  goToApp= () => this.props.navigation.navigate('Login');
 
   render() {
     return (
