@@ -1,12 +1,13 @@
 import React from 'react';
-import { StyleSheet, Image, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Image, Text, View, TouchableOpacity } from 'react-native';
 import TextCustom from '../components/TextCustom';
 import TextInputCustom from '../components/TextInputCustom';
 // Import firebase and it's auth module
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-
+import universalstyles from '../assets/style/Style';
+import colors from '../constants/Colors';
 import LoginScreen from '../screens/LoginScreen';
 
 
@@ -44,12 +45,21 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={ universalstyles.container }>
 
-        <TextCustom >Blipr 🔴</TextCustom>
-
-        <TextCustom >Welcome, {this.state.name}!</TextCustom>
-
+        <View style={styles.welcome}>
+          <TextCustom style={ [universalstyles.title, styles.title] }>
+            Hi, {this.state.name}
+            <Text style={styles.dot}>.</Text>
+          </TextCustom>
+          <TextCustom>
+            So far you have made
+            <Text style= { styles.dot }> 23 </Text>
+            blips at {"\n"}
+            <Text style= { styles.dot }>3 </Text>
+            different concerts.
+          </TextCustom>
+        </View>
         <TouchableOpacity
           onPress={this.handleLogout}>
             <TextCustom >Logout</TextCustom>
@@ -62,9 +72,11 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    //justifyContent: 'center'
-  },
+  title: {
+    textAlign: "left",
+    marginBottom: 25,
+ } ,
+ dot: {
+  color: colors.red,
+ },
 })

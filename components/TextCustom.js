@@ -38,8 +38,9 @@ export default class TextCustom extends React.Component {
 const styles = StyleSheet.create({
     defaultStyle: {
         fontFamily: 'blipr',
-        color: 'red',
-        textAlign: 'center',
-        // fontWeight: 'bold',
+        color: 'black',
+        textAlign: 'left',
+        fontSize: 16,
+        lineHeight: 24,
     },
 })

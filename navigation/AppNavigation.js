@@ -20,7 +20,11 @@ export default function AppNavigation(props) {
         {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
         <NavigationContainer linking={LinkingConfiguration}>
           <Stack.Navigator>
-            <Stack.Screen name="App" component={BottomTabNavigator} />
+            <Stack.Screen name="App" component={BottomTabNavigator} 
+            options={{
+              headerShown: false
+            }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </View>

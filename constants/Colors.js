@@ -14,6 +14,7 @@ const colors = {
   noticeBackground: tintColor,
   noticeText: '#fff',
   red: '#F72806',
+  white: '#F2F2F2',
 };
 
 export default colors;

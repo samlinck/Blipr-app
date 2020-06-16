@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, ActivityIndicator, TouchableOpacity } from 'react-native';
 // Import firebase and it's auth module
 import firebase from 'firebase/app';
 import TextCustom from '../components/TextCustom';
 import TextInputCustom from '../components/TextInputCustom';
 import universalstyles from '../assets/style/Style';
+import colors from '../constants/Colors';
 
 export default class LoginScreen extends React.Component {
 
@@ -49,7 +50,13 @@ export default class LoginScreen extends React.Component {
       return (
         <View style={universalstyles.container}>
           
-          <TextCustom style={universalstyles.title} >Login</TextCustom>
+          <TextCustom style={[universalstyles.title, styles.title]} >Login<Text style={styles.dot}>.</Text></TextCustom>
+          <Image
+            source={
+                require('../assets/images/login.png')
+            }
+            style={styles.loginImage}
+          />
           
           {this.state.errorMessage &&
             <Text>
@@ -76,20 +83,28 @@ export default class LoginScreen extends React.Component {
         
           <TouchableOpacity
            onPress={this.handleLogin}>
-            <TextCustom onPress={this.handleLogin}>Login</TextCustom>
+            <TextCustom onPress={this.handleLogin} style= {[universalstyles.btn, styles.btn]}>Login</TextCustom>
           </TouchableOpacity>
 
-          <TouchableOpacity
-           onPress={this.goToRegister}>
-            <TextCustom onPress={this.goToRegister}>No account yet?</TextCustom>
-          </TouchableOpacity>
+          <View style={styles.links}>
+            <TouchableOpacity
+            onPress={this.goToRegister}>
+              <TextCustom onPress={this.goToRegister} style={universalstyles.link} >No account yet?</TextCustom>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <TextCustom style={universalstyles.link}>Forgot password?</TextCustom>
+            </TouchableOpacity>
+          </View>  
+
+          <View style={styles.orContainer}>
+            <Text style={styles.line}></Text>
+            <Text style={styles.or}>or</Text>
+            <Text style={styles.line}></Text>
+          </View>
 
           <TouchableOpacity>
-            <TextCustom>Forgot password?</TextCustom>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <TextCustom>Sign in with Facebook</TextCustom>
+            <TextCustom style= {universalstyles.btn}>Sign in with Facebook</TextCustom>
           </TouchableOpacity>
 
         </View>
@@ -99,5 +114,38 @@ export default class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
  // Here styling
-
+ title: {
+    textAlign: "left",
+    marginBottom: 25,
+ } ,
+ dot: {
+  color: colors.red,
+ },
+ loginImage: {
+    alignSelf: "center",
+    width: 250,
+    height: 250,
+  },
+  btn: {
+    alignSelf: "flex-start",
+    marginVertical: 25,
+  },
+  links: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  orContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginVertical: 25,
+  },
+  line: {
+    flex:1,
+    height: 1,
+    backgroundColor: 'black',
+  },
+  or: {
+    width: 50,
+    textAlign: "center",
+  }
 })

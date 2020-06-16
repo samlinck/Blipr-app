@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontFamily: 'blipr',
         color: 'black',
-        height: 80,
+        height: 50,
         // justifySelf: "stretch",
         // flexGrow: 1,
         borderBottomWidth: 2,

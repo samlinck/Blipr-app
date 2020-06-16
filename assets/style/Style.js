@@ -1,23 +1,36 @@
 import {
     StyleSheet,
   } from 'react-native';
+  import colors from '../../constants/Colors';
 
   const universalstyles = StyleSheet.create({
     // All the style content goes here, I've only included one 'class'
     container: {
-        paddingVertical: 50,
-        paddingHorizontal: 10,
-        // backgroundColor: "red",
-        borderWidth: 2,
-        borderColor: "red",
+        paddingVertical: 30,
+        paddingHorizontal: 25,
+        // borderWidth: 2,
+        // borderColor: "red",
         flex: 1 ,
         alignItems: "stretch",
-        // justifyContent: "space-between"
     },
     title: {
         fontWeight: "900",
         fontSize: 36,
-        color: "black",
+        lineHeight: 52,
+    },
+    btn: {
+      backgroundColor: colors.red,
+      color: colors.white,
+      paddingHorizontal: 40,
+      paddingVertical: 15,
+      borderRadius: 60,
+      fontSize: 14,
+      textTransform: "uppercase",
+    },
+    link: {
+      color: "black",
+      fontSize: 14,
+      textDecorationLine: "underline",
     }
   });
 
