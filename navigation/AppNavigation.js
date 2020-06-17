@@ -6,7 +6,10 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import useCachedResources from '../hooks/useCachedResources';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
+import ConnectScreen from '../screens/ConnectScreen';
+import ConnectingScreen from '../screens/ConnectingScreen';
 import CurrentEventScreen from '../screens/CurrentEventScreen';
+
 
 const Stack = createStackNavigator();
 
@@ -22,6 +25,8 @@ export default function AppNavigation(props) {
         <NavigationContainer linking={LinkingConfiguration}>
           <Stack.Navigator>
             <Stack.Screen name="App" component={BottomTabNavigator} />
+            <Stack.Screen name="ConnectScreen" component={ConnectScreen} />
+            <Stack.Screen name="ConnectingScreen" component={ConnectingScreen} />
             <Stack.Screen name="CurrentEventScreen" component={CurrentEventScreen} />
           </Stack.Navigator>
         </NavigationContainer>

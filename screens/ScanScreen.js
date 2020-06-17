@@ -19,7 +19,7 @@ export default function ScanScreen() {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     //alert(`Welcome to ${data}! Enjoy your moments!`); // when scanned, next steps...
-    navigation.navigate('CurrentEventScreen')
+    navigation.navigate('ConnectScreen')
   };
 
 
