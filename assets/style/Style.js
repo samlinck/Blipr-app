@@ -26,6 +26,8 @@ import {
       borderRadius: 60,
       fontSize: 14,
       textTransform: "uppercase",
+      alignSelf: "center",
+      
     },
     link: {
       color: "black",

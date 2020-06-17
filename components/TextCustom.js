@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         fontFamily: 'blipr',
         color: 'black',
         textAlign: 'left',
-        fontSize: 16,
+        fontSize: 14,
         lineHeight: 24,
     },
 })
