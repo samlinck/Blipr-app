@@ -1,30 +1,48 @@
-import * as React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, StyleSheet, Button } from 'react-native';
+import { BarCodeScanner } from 'expo-barcode-scanner';
+import { useNavigation } from '@react-navigation/native';
 
 export default function ScanScreen() {
+    
+  const [hasPermission, setHasPermission] = useState(null);
+  const [scanned, setScanned] = useState(false);
+  const navigation = useNavigation();
 
-    const friends = [
-        { name: 'Friend 1' },
-        { name: 'Friend 2' }, 
-        { name: 'Friend 3' }, 
-        { name: 'Friend 4' }, 
-        { name: 'Friend 5' }, 
-    ];
+  useEffect(() => {
+    (async () => {
+      const { status } = await BarCodeScanner.requestPermissionsAsync();
+      setHasPermission(status === 'granted');
+    })();
+  }, []);
 
-    return (
-       <FlatList 
-        keyExtractor={(friend) => friend.name}
-        data={friends} 
-        renderItem={({ item }) => {
-        return <Text style={styles.text}>{ item.name }</Text>
-        }}
+  const handleBarCodeScanned = ({ type, data }) => {
+    setScanned(true);
+    //alert(`Welcome to ${data}! Enjoy your moments!`); // when scanned, next steps...
+    navigation.navigate('CurrentEventScreen')
+  };
 
-        />
-    );
-};
 
-const styles = StyleSheet.create({
-    text: {
-        fontSize: 60,
-    }
-});
+  if (hasPermission === null) {
+    return <Text>Requesting for camera permission</Text>;
+  }
+  if (hasPermission === false) {
+    return <Text>No access to camera</Text>;
+  }
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+      }}>
+      <BarCodeScanner
+        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+        style={StyleSheet.absoluteFillObject}
+      />
+
+      {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
+    </View>
+  );
+}

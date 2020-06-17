@@ -24,7 +24,6 @@ export default class HomeScreen extends React.Component {
   componentDidMount() {
     // Get name via Firestore.
     this.getName();
-
   }
   
   getName = () => {

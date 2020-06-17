@@ -9,6 +9,8 @@ export default {
         Home: 'home',
         Alert: 'alert',
         Scan: 'scan',
+        Blip: 'blip',
+        Profile: 'profile'
       },
     },
   },
