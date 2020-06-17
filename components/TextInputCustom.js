@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextInput, StyleSheet, View, ActivityIndicator } from 'react-native';
 import * as Font from 'expo-font';
+import colors from '../constants/Colors'
 
 export default class TextCustom extends React.Component {
 
@@ -13,7 +14,7 @@ export default class TextCustom extends React.Component {
 
     async UNSAFE_componentWillMount() {
         await Font.loadAsync({
-            'blipr': require('../assets/fonts/SpaceMono-Regular.ttf'),
+            'blipr': require('../assets/fonts/Graphik-Regular.ttf'),
         })
         this.setState({ fontLoaded: true })
     }
@@ -43,16 +44,17 @@ export default class TextCustom extends React.Component {
 
 const styles = StyleSheet.create({
     defaultStyle: {
-        fontSize: 13,
+        fontSize: 20,
         fontFamily: 'blipr',
         color: 'black',
-        height: 80,
-        width: 300,
+        height: 50,
+        // justifySelf: "stretch",
+        // flexGrow: 1,
         borderBottomWidth: 2,
-        borderBottomColor: 'white',
+        borderBottomColor: colors.red,
         paddingVertical: 2,
         paddingHorizontal: 4,
         marginTop: 10,
-        textAlign: 'center',
+        textAlign: 'left',
     },
 })

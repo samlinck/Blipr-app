@@ -14,7 +14,7 @@ export default class TextCustom extends React.Component {
     // asyncroon font laden en als did lukt gaan we de state van fontLoaded op true zetten
     async UNSAFE_componentWillMount() {
         await Font.loadAsync({
-            'blipr': require('../assets/fonts/SpaceMono-Regular.ttf'),
+            'blipr': require('../assets/fonts/Graphik-Bold.ttf'),
         })
         this.setState({ fontLoaded: true })
     }
@@ -38,7 +38,9 @@ export default class TextCustom extends React.Component {
 const styles = StyleSheet.create({
     defaultStyle: {
         fontFamily: 'blipr',
-        color: 'red',
-        textAlign: 'center',
+        color: 'black',
+        textAlign: 'left',
+        fontSize: 16,
+        lineHeight: 24,
     },
 })
