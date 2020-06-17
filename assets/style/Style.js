@@ -15,7 +15,7 @@ import {
     },
     title: {
         fontWeight: "900",
-        fontSize: 36,
+        fontSize: 30,
         lineHeight: 52,
     },
     btn: {

@@ -52,9 +52,7 @@ export default class LoginScreen extends React.Component {
           
           <TextCustom style={[universalstyles.title, styles.title]} >Login<Text style={styles.dot}>.</Text></TextCustom>
           <Image
-            source={
-                require('../assets/images/login.png')
-            }
+            source={require('../assets/images/login.png')}
             style={styles.loginImage}
           />
           
