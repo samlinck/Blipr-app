@@ -33,7 +33,19 @@ import {
       color: "black",
       fontSize: 14,
       textDecorationLine: "underline",
-    }
+    },
+    btnBlack: {
+      backgroundColor: "black",
+      color: colors.white,
+      paddingHorizontal: 30,
+      paddingVertical: 10,
+      borderRadius: 60,
+      fontSize: 14,
+      textTransform: "uppercase",
+      alignSelf: "center",
+      marginTop: 75,
+      
+    },
   });
 
   module.exports = universalstyles;
