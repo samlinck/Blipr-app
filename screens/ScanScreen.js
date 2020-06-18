@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
+import TextCustom from '../components/TextCustom';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useNavigation } from '@react-navigation/native';
 
@@ -35,8 +36,13 @@ export default function ScanScreen() {
       style={{
         flex: 1,
         flexDirection: 'column',
-        justifyContent: 'flex-end',
+        justifyContent: 'flex-start',
+        alignContent: 'center',
+        paddingVertical: 60,
+        paddingHorizontal: 30,
       }}>
+      <TextCustom style={{textAlign: "center"}}>Please scan your personal Blipr QR-code.
+You can find this code on your ticket.</TextCustom>
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
         style={StyleSheet.absoluteFillObject}

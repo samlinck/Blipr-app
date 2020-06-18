@@ -153,10 +153,10 @@ export default class HomeScreen extends React.Component {
             </View> 
           </View>
         </View>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={this.handleLogout}>
             <TextCustom >Logout</TextCustom>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       
       </ScrollView>
     )
