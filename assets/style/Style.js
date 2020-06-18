@@ -21,8 +21,8 @@ import {
     btn: {
       backgroundColor: colors.red,
       color: colors.white,
-      paddingHorizontal: 40,
-      paddingVertical: 15,
+      paddingHorizontal: 30,
+      paddingVertical: 10,
       borderRadius: 60,
       fontSize: 14,
       textTransform: "uppercase",

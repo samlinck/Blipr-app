@@ -24,14 +24,24 @@ export default function AppNavigation(props) {
         {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
         <NavigationContainer linking={LinkingConfiguration}>
           <Stack.Navigator>
-            <Stack.Screen name="ConnectScreen" component={ConnectScreen} />
-            <Stack.Screen name="ConnectingScreen" component={ConnectingScreen} />
-            <Stack.Screen name="App" component={BottomTabNavigator} 
+          <Stack.Screen name="App" component={BottomTabNavigator} 
             options={{
               headerShown: false
             }}
             />
-            <Stack.Screen name="CurrentEventScreen" component={CurrentEventScreen} />
+            <Stack.Screen name="ConnectScreen" component={ConnectScreen} 
+            options={{
+              headerShown: false
+            }}/>
+            <Stack.Screen name="ConnectingScreen" component={ConnectingScreen} 
+            options={{
+              headerShown: false
+            }}/>
+            
+            <Stack.Screen name="CurrentEventScreen" component={CurrentEventScreen} 
+            options={{
+              headerShown: false
+            }}/>
           </Stack.Navigator>
         </NavigationContainer>
       </View>
