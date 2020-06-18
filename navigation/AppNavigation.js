@@ -9,6 +9,7 @@ import LinkingConfiguration from './LinkingConfiguration';
 import ConnectScreen from '../screens/ConnectScreen';
 import ConnectingScreen from '../screens/ConnectingScreen';
 import CurrentEventScreen from '../screens/CurrentEventScreen';
+import DetailBlipScreen from '../screens/DetailBlipScreen';
 
 
 const Stack = createStackNavigator();
@@ -39,6 +40,11 @@ export default function AppNavigation(props) {
             }}/>
             
             <Stack.Screen name="CurrentEventScreen" component={CurrentEventScreen} 
+            options={{
+              headerShown: false
+            }}/>
+
+            <Stack.Screen name="DetailBlipScreen" component={DetailBlipScreen} 
             options={{
               headerShown: false
             }}/>

@@ -3,8 +3,18 @@ import { View, Text, StyleSheet, ImageBackground, Image } from 'react-native';
 import TextCustom from '../components/TextCustom';
 import universalstyles from '../assets/style/Style';
 import colors from '../constants/Colors';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function BlipScreen() {
+
+    const navigation = useNavigation();
+
+    const Blip = () => {
+        return navigation.navigate('DetailBlipScreen')
+    }
+
     return (
        <View style={universalstyles.container}>
            <TextCustom style={universalstyles.title}>Your Blips<Text style={styles.dot}>.</Text></TextCustom>
@@ -60,7 +70,10 @@ export default function BlipScreen() {
               <ImageBackground 
               source={require('../assets/images/blip-4.png')}
               style={styles.image}>
+                  <TouchableWithoutFeedback
+                  onPress={Blip}>
                 <TextCustom style={[styles.text, styles.textBlack]}>Wauw</TextCustom>
+                </TouchableWithoutFeedback>
               </ImageBackground>
             </View>
           </View>
